@@ -7,6 +7,8 @@ import AddRecipe from './recipes/addRecipe'
 import {Button, Well} from 'react-bootstrap';
 "use strict";
 
+//Felipe Cueto: Asumo que se por lo que esta en desarollo, sin embargo las paginas deberían estar en un unico idioma, ingles o español
+
 class App extends Component {
     constructor(props) {
         super(props);
