@@ -14,9 +14,11 @@ class AddRecipe extends Component{
       title: '',
       type:-1,
       description:'',
-      ingredients:[{name:'New ingredient'}],
+      ingredients:[],
       pictureGif:' nop '
     }
+    this.escribeInstructions = this.escribeInstructions.bind(this);
+    this.escribeTitle = this.escribeTitle.bind(this);
   }
 
   postRecipe(){
@@ -41,14 +43,18 @@ class AddRecipe extends Component{
       window.alert('Some required fields are missing');
     }
   }
+
   escribeInstructions(value)
   {
     this.setState({description: value})
   }
+
+
   escribeTitle(value)
   {
     this.setState({title: value})
   }
+
 
   render(){
     return (
@@ -67,7 +73,7 @@ class AddRecipe extends Component{
                       </tr>
                       <tr>
                           <td>Title</td>
-                          <td><Input name="titulo" type="text"  handleInputChange={this.escribeTitle}
+                          <td><Input name="titulo" type="text"  onTextInput={this.escribeTitle}
                           placeholder="Grandma's lemonade" value={this.state.titulo}/></td>
                       </tr>
                       <tr>
@@ -76,12 +82,8 @@ class AddRecipe extends Component{
                       </tr>
                       <tr>
                           <td>Instructions</td>
-                          <td><Input name="instructions" type="text"  handleInputChange={this.escribeInstructions}
+                          <td><Input name="instructions" type="text"  onTextInput={this.escribeInstructions}
                           placeholder="First, cut 3 lemons in halves..." value={this.state.titulo}/></td>
-                      </tr>
-                      <tr>
-                          <td>Likes</td>
-                          <td>0</td>
                       </tr>
                       <tr>
                         <td colSpan="2"><Button onClick={() => {this.postRecipe()}}  bsStyle="info">Insert recipe!</Button></td>

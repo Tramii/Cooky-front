@@ -10,34 +10,35 @@ class Ingredients extends Component {
   constructor(props){
     super(props);
     this.state = {
-      ingredienteConstruccion:''
+      ingredienteConstruccion:{name:" "}
     }
+    this.nuevoIngrediente = this.nuevoIngrediente.bind(this);
   }
 
-  lines() {
-    this.props.ingredients.map(function(ingredient, i) {
-    return (
-      <Ingredient name={ingredient.name} key={i}/>
-    );
-  });
-  }
+
 
   nuevoIngrediente(event)
   {
     this.setState({ingredienteConstruccion: {name:event}})
   }
 
+
   saveIngredient(){
-    this.props.ingredients.push(ingredienteConstruccion);
-    this.setState({ingredienteConstruccion : ''});
+    this.props.ingredients.push(this.state.ingredienteConstruccion);
+    console.log(this.state.ingredienteConstruccion);
+    this.nuevoIngrediente(" ");
+
+    console.log(this.props.ingredients);
   }
 
   render(){
     return(
       <div>
         <Well>
-            {this.lines}
-            <Input name="nuevoIngrediente" type="text"  handleInputChange={this.nuevoIngrediente}
+            {this.props.ingredients.map((ingredient,i)=> {
+                return <Ingredient name={ingredient.name} key={i}/>
+              })}
+            <Input name="nuevoIngrediente" type="text"  onTextInput={this.nuevoIngrediente}
              placeholder="New Ingredient" value={this.state.ingredienteConstruccion.name}/>
              <Button onClick={() => {this.saveIngredient()}}  bsStyle="info">Insert ingredient!</Button>
         </Well>
