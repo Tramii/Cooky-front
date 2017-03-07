@@ -33,7 +33,7 @@ class Ingredients extends Component {
       <div>
         <Well>
             {this.props.ingredients.map((ingredient,i)=> {
-                return <Ingredient name={ingredient.name} key={i}/>
+                return <Ingredient name={ingredient.ingrediente} key={i}/>
               })}
             <Input name="nuevoIngrediente" type="text"  onTextInput={this.nuevoIngrediente}
              placeholder="New Ingredient" value={this.state.ingredienteConstruccion.name}/>
