@@ -129,6 +129,8 @@ class Sign extends Component {
         this.setState({show: true});
     }
 
+    
+    //Recomendaria separar el signIn y signUp (Mediante popups o paginas distintas) para dar claridad al usuario
     render() {
 
         const wellInstanceSignUp = (
