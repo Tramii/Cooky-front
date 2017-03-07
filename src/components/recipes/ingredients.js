@@ -4,13 +4,11 @@ import {Table, Button, Well} from 'react-bootstrap';
 import Ingredient from './ingredient';
 import Input from '../sign/input'
 
-const ROOT_URL = "https://tramii-cooky-back.herokuapp.com";
-
 class Ingredients extends Component {
   constructor(props){
     super(props);
     this.state = {
-      ingredienteConstruccion:{name:" "}
+      ingredienteConstruccion:''
     }
     this.nuevoIngrediente = this.nuevoIngrediente.bind(this);
   }
@@ -26,9 +24,8 @@ class Ingredients extends Component {
   saveIngredient(){
     this.props.ingredients.push(this.state.ingredienteConstruccion);
     console.log(this.state.ingredienteConstruccion);
-    this.nuevoIngrediente(" ");
-
     console.log(this.props.ingredients);
+    this.setState({ingredienteConstruccion : ''});
   }
 
   render(){

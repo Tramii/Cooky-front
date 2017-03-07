@@ -5,7 +5,7 @@ import axios from 'axios';
 import Ingredients from './ingredients'
 
 "use strict";
-const ROOT_URL = "https://tramii-cooky-back.herokuapp.com";
+const ROOT_URL = "https://tramii-cooky-back.herokuapp.com";//"http://localhost:3000"//
 class AddRecipe extends Component{
 
   constructor(props){
@@ -24,6 +24,7 @@ class AddRecipe extends Component{
   postRecipe(){
     if(this.state.title!=='' && this.state.description!=='' && this.state.ingredients!==[] )
     {
+      console.log("esta haciendo el post recipe "+this.state.title+ "  "+this.state.description+"  "+ this.state.ingredients);
       axios.post(ROOT_URL + "/recipes/addRecipe", {
         nickName: this.props.username,
         password: this.props.password,
@@ -40,7 +41,7 @@ class AddRecipe extends Component{
         })
     }
     else {
-      window.alert('Some required fields are missing');
+      alert('Some required fields are missing');
     }
   }
 

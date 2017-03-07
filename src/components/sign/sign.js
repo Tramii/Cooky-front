@@ -6,7 +6,7 @@ import {Well, Button} from 'react-bootstrap';
 
 "use strict";
 
-const ROOT_URL = "https://tramii-cooky-back.herokuapp.com";
+const ROOT_URL = "https://tramii-cooky-back.herokuapp.com";//"http://localhost:3000"
 //Modal window for signing up
 class Sign extends Component {
 
