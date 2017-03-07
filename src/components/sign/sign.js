@@ -130,7 +130,7 @@ class Sign extends Component {
     }
 
     render() {
-
+        /* Todas estas const las podrían manejar como componentes aparte para hacerlo mas modular*/
         const wellInstanceSignUp = (
             <div className="signUpModal col-md-6">
                 <Well>
