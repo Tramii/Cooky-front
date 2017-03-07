@@ -17,7 +17,7 @@ class Ingredients extends Component {
 
   nuevoIngrediente(event)
   {
-    this.setState({ingredienteConstruccion: {name:event}})
+    this.setState({ingredienteConstruccion: {ingrediente:event}})
   }
 
 
