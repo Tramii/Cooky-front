@@ -56,7 +56,9 @@ class AddRecipe extends Component{
     this.setState({title: value})
   }
 
-
+//Felie Cueto: Deben manejar mejor los espacios entre los elementos
+//Felie Cueto: Si las instrucciones son un parrafo, el campo deberia ser un textArea
+//Felie Cueto: Al agregar un ingredediente se deberia mostrar en pantalla, como en el ejercicio de comentarios
   render(){
     return (
       <div>
