@@ -6,7 +6,7 @@ import Recipes from './recipes/recipes';
 import AddRecipe from './recipes/addRecipe'
 import {Button, Well} from 'react-bootstrap';
 "use strict";
-
+/*No hay necesidad de usar use strict en react*/
 class App extends Component {
     constructor(props) {
         super(props);
@@ -46,6 +46,8 @@ class App extends Component {
     }
 
     render() {
+        /*Pueden manejar las rutas en react con react-routes 
+        Este pagina me sirvió para entenderlo :) https://css-tricks.com/learning-react-router/*/
         var status = this.state.status;
         let element = null;
         let element2 = null;
